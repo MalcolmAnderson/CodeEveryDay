@@ -22,5 +22,16 @@ namespace Fizzbuzz
             retVal += fizz + buzz;
             return retVal;
         }
+
+        public string FizzBuzzOneTo(int numberToCountTo)
+        {
+            string returnValue = "";
+            for(int i = 1; i <= numberToCountTo; i++)
+            {
+                Console.Out.WriteLine(this.ParseCandidate(i));
+                returnValue += this.ParseCandidate(i) + Environment.NewLine;
+            }
+            return returnValue;
+        }
     }
 }

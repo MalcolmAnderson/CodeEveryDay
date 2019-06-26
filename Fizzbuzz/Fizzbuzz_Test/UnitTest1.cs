@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System;
 
 namespace Fizzbuzz
 {
@@ -35,6 +36,26 @@ namespace Fizzbuzz
         {
             Assert.AreEqual("11", o.ParseCandidate(11));
         }
+
+        [Test]
+        public void DivisibleByThreeAndFiveReturnsFizzBuzz()
+        {
+            Assert.AreEqual("FizzBuzz", o.ParseCandidate(30));
+        }
+
+        [Test]
+        public void FizzBuzzOneToFifteenWorksCorrectly()
+        {
+            string expected = string.Join(
+                Environment.NewLine,
+                "1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz",""
+                );
+
+
+            Assert.AreEqual(expected, o.FizzBuzzOneTo(15));
+        }
+
+
 
     }
 }
