@@ -24,5 +24,17 @@ namespace Fizzbuzz
             Assert.AreEqual("Fizz", o.ParseCandidate(3));
         }
 
+        [Test]
+        public void DivisibleByFiveReturnsBuzz()
+        {
+            Assert.AreEqual("Buzz", o.ParseCandidate(5));
+        }
+
+        [Test]
+        public void NotDivisibleByThreeOrFiveReturnsNumberAsString()
+        {
+            Assert.AreEqual("11", o.ParseCandidate(11));
+        }
+
     }
 }
