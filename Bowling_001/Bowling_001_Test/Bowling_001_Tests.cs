@@ -18,10 +18,7 @@ namespace Bowling_001
         {
             int numberOfRolls = 20;
             int numberOfPinsEachRoll = 0;
-            for(int i=0; i< numberOfRolls; i++)
-            {
-                g.Roll(numberOfPinsEachRoll);
-            }
+            RollAllTheSameNumberOfPins(numberOfRolls, numberOfPinsEachRoll);
             int expectedScore = 0;
             Assert.AreEqual(expectedScore, g.Score);
         }
@@ -29,12 +26,19 @@ namespace Bowling_001
         [Test]
         public void TestAllOnes_Equals_20()
         {
-            for(int i=0; i<20; i++)
-            {
-                g.Roll(1);
-            }
+            int numberOfRolls = 20;
+            int numberOfPinsEachRoll = 1;
+            RollAllTheSameNumberOfPins(numberOfRolls, numberOfPinsEachRoll);
             int expectedScore = 20;
             Assert.AreEqual(expectedScore, g.Score);
+        }
+
+        private void RollAllTheSameNumberOfPins(int numberOfRolls, int numberOfPinsEachRoll)
+        {
+            for (int i = 0; i < numberOfRolls; i++)
+            {
+                g.Roll(numberOfPinsEachRoll);
+            }
         }
     }
 }
