@@ -22,7 +22,7 @@ namespace Bowling_001
                     }
                     else if (isSpare(rollIndex))
                     {
-                        currentFrameScore += 10 + rolls[rollIndex + 2];
+                        currentFrameScore += 10 + SpareBonus(rollIndex);
                         rollIndex += 2;
                     }
                     else
@@ -35,6 +35,10 @@ namespace Bowling_001
             }
         }
 
+        private int SpareBonus(int rollIndex)
+        {
+            return rolls[rollIndex + 2];
+        }
 
         private bool isSpare(int rollIndex)
         {
