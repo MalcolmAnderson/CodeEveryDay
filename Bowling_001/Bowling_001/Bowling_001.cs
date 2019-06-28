@@ -15,12 +15,12 @@ namespace Bowling_001
                 int currentFrameScore = 0;
                 for(int frame=0; frame< 10; frame++)
                 {
-                    if (isStrike(rollIndex))
+                    if (IsStrike(rollIndex))
                     {
-                        currentFrameScore += 10 + rolls[rollIndex + 1] + rolls[rollIndex + 2];
+                        currentFrameScore += 10 + StrikeBonus(rollIndex);
                         rollIndex++;
                     }
-                    else if (isSpare(rollIndex))
+                    else if (IsSpare(rollIndex))
                     {
                         currentFrameScore += 10 + SpareBonus(rollIndex);
                         rollIndex += 2;
@@ -40,12 +40,17 @@ namespace Bowling_001
             return rolls[rollIndex + 2];
         }
 
-        private bool isSpare(int rollIndex)
+        private int StrikeBonus(int rollIndex)
+        {
+            return rolls[rollIndex + 1] + rolls[rollIndex + 2];
+        }
+
+        private bool IsSpare(int rollIndex)
         {
             return rolls[rollIndex] + rolls[rollIndex + 1] == 10;
         }
 
-        private bool isStrike(int rollIndex)
+        private bool IsStrike(int rollIndex)
         {
             return rolls[rollIndex] == 10;
         }
