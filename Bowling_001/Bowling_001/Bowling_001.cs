@@ -15,16 +15,21 @@ namespace Bowling_001
                 int currentFrameScore = 0;
                 for(int frame=0; frame< 10; frame++)
                 {
-                    if (isSpare(rollIndex))
+                    if (rolls[rollIndex] == 10) // strike
+                    {
+                        currentFrameScore += 10 + rolls[currentFrameScore + 1] + rolls[currentFrameScore + 2];
+                        rollIndex++;
+                    }
+                    else if (isSpare(rollIndex))
                     {
                         currentFrameScore += 10 + rolls[rollIndex + 2];
+                        rollIndex += 2;
                     }
                     else
                     {
                         currentFrameScore += rolls[rollIndex] + rolls[rollIndex + 1];
+                        rollIndex += 2;
                     }
-
-                    rollIndex += 2;
                 }
                 return currentFrameScore; 
             }
