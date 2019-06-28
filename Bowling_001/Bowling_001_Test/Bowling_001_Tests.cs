@@ -34,6 +34,17 @@ namespace Bowling_001
         }
 
         [Test]
+        public void TestPerfectGame_Equals_300()
+        {
+            int numberOfRolls = 12;
+            int numberOfPinsEachRoll = 10;
+            RollAllTheSameNumberOfPins(numberOfRolls, numberOfPinsEachRoll);
+            expectedScore = 300;
+            int actualScore = g.Score;
+            Assert.AreEqual(expectedScore, actualScore);
+        }
+
+        [Test]
         public void TestOneSpare_Equals_16()
         {
             g.Roll(5);

@@ -17,7 +17,7 @@ namespace Bowling_001
                 {
                     if (isStrike(rollIndex))
                     {
-                        currentFrameScore += 10 + rolls[currentFrameScore + 1] + rolls[currentFrameScore + 2];
+                        currentFrameScore += 10 + rolls[rollIndex + 1] + rolls[rollIndex + 2];
                         rollIndex++;
                     }
                     else if (isSpare(rollIndex))
@@ -34,6 +34,7 @@ namespace Bowling_001
                 return currentFrameScore; 
             }
         }
+
 
         private bool isSpare(int rollIndex)
         {
