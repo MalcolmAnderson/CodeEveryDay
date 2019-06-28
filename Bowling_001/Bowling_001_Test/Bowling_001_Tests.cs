@@ -33,17 +33,17 @@ namespace Bowling_001
             Assert.AreEqual(expectedScore, g.Score);
         }
 
-        // Slide 31 of uncle bob's Bowling Game Kata
-        //[test]
-        //public void testonespare_equals_16()
-        //{
-        //    g.roll(5);
-        //    g.roll(5);
-        //    g.roll(3);
-        //    rollallthesamenumberofpins(20 - 3, 0);
-        //    expectedscore = 16;
-        //    assert.areequal(expectedscore, g.score);
-        //}
+        //Slide 31 of uncle bob's Bowling Game Kata
+        [Test]
+        public void testonespare_equals_16()
+        {
+            g.Roll(5);
+            g.Roll(5);
+            g.Roll(3);
+            RollAllTheSameNumberOfPins(20 - 3, 0);
+            expectedScore = 16;
+            Assert.AreEqual(expectedScore, g.Score);
+        }
 
         private void RollAllTheSameNumberOfPins(int numberOfRolls, int numberOfPinsEachRoll)
         {
