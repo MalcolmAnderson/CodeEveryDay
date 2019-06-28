@@ -16,9 +16,11 @@ namespace Bowling_001
         [Test]
         public void TestGutterGame_Equals_0()
         {
-            for(int i=0; i<20; i++)
+            int numberOfRolls = 20;
+            int numberOfPinsEachRoll = 0;
+            for(int i=0; i< numberOfRolls; i++)
             {
-                g.Roll(0);
+                g.Roll(numberOfPinsEachRoll);
             }
             int expectedScore = 0;
             Assert.AreEqual(expectedScore, g.Score);
