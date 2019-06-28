@@ -4,17 +4,18 @@ namespace Bowling_001
 {
     public class Bowling_Tests
     {
-        
+
+        Game g;
 
         [SetUp]
         public void Setup()
         {
+            g = new Game();
         }
 
         [Test]
         public void TestGutterGame_Equals_0()
         {
-            Game g = new Game();
             for(int i=0; i<20; i++)
             {
                 g.Roll(0);
@@ -26,7 +27,6 @@ namespace Bowling_001
         [Test]
         public void TestAllOnes_Equals_20()
         {
-            Game g = new Game();
             for(int i=0; i<20; i++)
             {
                 g.Roll(1);
