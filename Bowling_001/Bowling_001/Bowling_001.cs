@@ -15,7 +15,7 @@ namespace Bowling_001
                 int currentFrameScore = 0;
                 for(int frame=0; frame< 10; frame++)
                 {
-                    if (rolls[rollIndex] == 10) // strike
+                    if (isStrike(rollIndex))
                     {
                         currentFrameScore += 10 + rolls[currentFrameScore + 1] + rolls[currentFrameScore + 2];
                         rollIndex++;
@@ -38,6 +38,11 @@ namespace Bowling_001
         private bool isSpare(int rollIndex)
         {
             return rolls[rollIndex] + rolls[rollIndex + 1] == 10;
+        }
+
+        private bool isStrike(int rollIndex)
+        {
+            return rolls[rollIndex] == 10;
         }
 
         public void Roll (int pins)
