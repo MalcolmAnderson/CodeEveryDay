@@ -5,7 +5,8 @@ namespace BowlingScore2
     public class ScoreKeeper
     {
         int rollnumber = 0;
-        int[] rolls = new int[21];
+        const int AllowableNumberOfRolls = 21;
+        int[] rolls = new int[AllowableNumberOfRolls];
 
         public int Score {
             get {
@@ -51,8 +52,10 @@ private bool IsSpare(int rollnumber)
 
         public void AddPins(int pins)
         {
-            rolls[rollnumber++] = pins;
-            //totalScore += pins;
+            if (rollnumber < AllowableNumberOfRolls)
+            {
+                rolls[rollnumber++] = pins;
+            }
         }
     }
 }

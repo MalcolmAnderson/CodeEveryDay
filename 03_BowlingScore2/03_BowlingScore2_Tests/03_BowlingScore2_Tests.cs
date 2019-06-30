@@ -6,6 +6,7 @@ namespace BowlingScore2
     public class BowlingScore2_Tests
     {
         private ScoreKeeper scoreKeeper;
+
         [SetUp]
         public void Setup()
         {
@@ -37,6 +38,13 @@ namespace BowlingScore2
             int expectedScore = 150;
             int actualScore = scoreKeeper.Score;
             Assert.AreEqual(expectedScore, actualScore, "Score should have been 150");
+        }
+
+        [Test]
+        public void ShouldIgnore22ndRoll()
+        {
+            //Assert.DoesNotThrow(typeof(System.IndexOutOfRangeException), "There should never be more than 21 rolls in a game");
+            RollAllTheSameNumber(1, 22);
         }
 
         private void RollAllTheSameNumber(int pins, int times)
