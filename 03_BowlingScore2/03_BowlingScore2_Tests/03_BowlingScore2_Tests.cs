@@ -5,30 +5,23 @@ namespace BowlingScore2
 {
     public class BowlingScore2_Tests
     {
+        private ScoreKeeper scoreKeeper;
         [SetUp]
         public void Setup()
         {
-        }
-
-        [Test]
-        public void Instantiate()
-        {
-            ScoreKeeper scoreKeeper = new ScoreKeeper();
-            Assert.Pass();
+            scoreKeeper = new ScoreKeeper();
         }
 
         [Test]
         public void GutterGameShouldScoreZero()
         {
-            ScoreKeeper scoreKeeper = new ScoreKeeper();
             for(int i = 0; i<21; i++)
             {
                 scoreKeeper.pins(0);
             }
-            int expected = 0;
-            int actual = scoreKeeper.Score;
-            Assert.AreEqual(expected, actual, "Score should have been zero");
-
+            int expectedScore = 0;
+            int actualScore = scoreKeeper.Score;
+            Assert.AreEqual(expectedScore, actualScore, "Score should have been zero");
         }
     }
 }
