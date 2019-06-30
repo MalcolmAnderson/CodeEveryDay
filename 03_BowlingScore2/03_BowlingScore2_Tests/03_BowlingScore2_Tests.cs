@@ -30,6 +30,15 @@ namespace BowlingScore2
             Assert.AreEqual(expectedScore, actualScore, "Score should have been twenty");
         }
 
+        [Test]
+        public void AllFivesShouldScoreOneFifty()
+        {
+            RollAllTheSameNumber(5, 21);
+            int expectedScore = 150;
+            int actualScore = scoreKeeper.Score;
+            Assert.AreEqual(expectedScore, actualScore, "Score should have been 150");
+        }
+
         private void RollAllTheSameNumber(int pins, int times)
         {
             for (int i = 0; i < times; i++)
