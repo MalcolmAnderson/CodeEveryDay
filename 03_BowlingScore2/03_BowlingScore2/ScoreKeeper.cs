@@ -52,6 +52,7 @@ private bool IsSpare(int rollnumber)
 
         public void AddPins(int pins)
         {
+            //rolls[rollNumberDuringDataInput++] = pins;
             if (rollNumberDuringDataInput < AllowableNumberOfRolls)
             {
                 rolls[rollNumberDuringDataInput++] = pins;
@@ -59,3 +60,6 @@ private bool IsSpare(int rollnumber)
         }
     }
 }
+
+
+
