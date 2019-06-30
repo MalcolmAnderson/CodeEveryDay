@@ -4,15 +4,16 @@ namespace BowlingScore2
 {
     public class ScoreKeeper
     {
+        int totalScore = 0;
         public int Score {
             get {
-                return 0;
+                return totalScore;
             }
         }
 
-        public void pins(int v)
+        public void AddPins(int pins)
         {
-            ;
+            totalScore += pins;
         }
     }
 }
