@@ -15,10 +15,7 @@ namespace BowlingScore2
         [Test]
         public void GutterGameShouldScoreZero()
         {
-            for (int i = 0; i < 20; i++)
-            {
-                scoreKeeper.AddPins(0);
-            }
+            RollAllTheSameNumber(0, 20);
             int expectedScore = 0;
             int actualScore = scoreKeeper.Score;
             Assert.AreEqual(expectedScore, actualScore, "Score should have been zero");
@@ -27,13 +24,18 @@ namespace BowlingScore2
         [Test]
         public void AllOnesShouldScoreTwenty()
         {
-            for (int i = 0; i < 20; i++)
-            {
-                scoreKeeper.AddPins(1);
-            }
+            RollAllTheSameNumber(1, 20);
             int expectedScore = 20;
             int actualScore = scoreKeeper.Score;
             Assert.AreEqual(expectedScore, actualScore, "Score should have been twenty");
+        }
+
+        private void RollAllTheSameNumber(int pins, int times)
+        {
+            for (int i = 0; i < times; i++)
+            {
+                scoreKeeper.AddPins(pins);
+            }
         }
 
     }
