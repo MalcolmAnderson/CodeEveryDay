@@ -4,10 +4,13 @@
 function add(...myValues: number[]): number{
     let total = 0;
 
+    //for(var i=0; i<myValues.length; i++){
+    //    total += arguments[i];
+    //}
 
-    for(var i=0; i<myValues.length; i++){
-        total += arguments[i];
-    }
+    myValues.forEach((item) => {
+        total += item;
+    })
     
     return total;
 }
