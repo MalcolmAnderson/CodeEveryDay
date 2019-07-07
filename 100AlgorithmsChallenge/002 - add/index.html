@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <link rel="shortcut icon" type="image/png" href="../../tools/jasmine/jasmine_favicon.png">
+    <link rel="stylesheet" type="text/css" href="../../tools/jasmine/jasmine.css">
+
+    <script type="text/javascript" src="../../tools/jasmine/jasmine.js"></script>
+    <script type="text/javascript" src="../../tools/jasmine/jasmine-html.js"></script>
+    <script type="text/javascript" src="../../tools/jasmine/boot.js"></script>
+    
+    <script src="text/typescript" src="add.ts"></script>
+
+    hello
+
+    <script>
+
+        describe('A blank set of tests for my new widget', () =>{
+
+        })
+
+
+
+        describe('Math Functions ', () => {
+            let num1;
+            let num2;
+
+            beforeEach(()=>{
+                num1 = 2;
+                num2 = 3;
+            })
+
+            it('Get the Sum of 2 Numbers', () => {
+                // arrange
+
+                // act
+                const result = add(num1, num2);
+
+                // assert
+                expect(result).toBe(5);
+            })
+
+            it('quick subtraction test', () =>{
+                const result = subtract(5, 2);
+                expect(result).toBe(3);
+            })
+
+            it('should multiply 2 numbers', () =>{
+                const result = multiply(5, 4);
+                expect(result).toBe(20);
+            })
+        });
+    </script>
+</head>
+
+</html>
