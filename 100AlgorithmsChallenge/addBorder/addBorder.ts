@@ -13,13 +13,12 @@ function addBorder(myInput: string[]): string[] {
     let wallChar = '*';
     let fillerChar = '.'; // swap ' ' and '.' for production vs debugging
 
-    let wall = wallChar.repeat(longestLine + 2); 
-
     for (var i = 0; i < myInput.length; i++) {
         var fillerLength = longestLine - myInput[i].length;
         myInput[i] = generateReplacetmentLine(myInput[i], fillerLength, wallChar, fillerChar);;
     }
 
+    let wall = wallChar.repeat(longestLine + 2); 
     myInput.unshift(wall);
     myInput.push(wall);
 
