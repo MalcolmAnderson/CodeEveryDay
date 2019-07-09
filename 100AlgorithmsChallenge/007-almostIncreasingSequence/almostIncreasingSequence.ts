@@ -28,6 +28,18 @@ function almostIncreasingSequence(inputArray: number[]): boolean {
     }
     return false;
 }
+
+// The following 2 tests are returning true when they should be failing.
+
+// should return false
+console.log(almostIncreasingSequence([23, 2, 23, 3, 5, 7]))
+// should return false
+console.log(almostIncreasingSequence([1, 2, 23, 3, 5, 5, 7]))
+
+
+// should return false
+console.log(isIncreasingSequence([1, 2, 3, 5, 5, 7]))
+
 // should return true
 console.log(almostIncreasingSequence([1, 2, 23, 3, 5, 7]))
 
@@ -42,7 +54,6 @@ testVal = [1, 2, 23, 3, 5, 7]
 candidate = testVal.splice(2,1);
 console.log(testVal)
 console.log(candidate)
-
 
 
 // should return true
