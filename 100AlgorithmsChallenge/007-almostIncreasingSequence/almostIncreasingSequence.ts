@@ -19,13 +19,22 @@ function almostIncreasingSequence(inputArray: number[]): boolean {
     }
     let candidate: number[];
     for (let i: number = 1; i < inputArray.length; i++) {
-        candidate = inputArray.splice(i,1);
-        isIncreasingSequence(inputArray) {
+        candidate = inputArray;
+        candidate.splice(i,1);
+        console.log(candidate)
+        if(isIncreasingSequence(candidate)) {
             return true;
         }
     }
     return false;
 }
+
+let testVal = [1, 2, 2, 3, 5, 7]
+let candidate = testVal.splice(0,1);
+console.log(testVal.splice(4, 1))
+console.log(testVal)
+console.log(candidate)
+
 
 
 // should return true
