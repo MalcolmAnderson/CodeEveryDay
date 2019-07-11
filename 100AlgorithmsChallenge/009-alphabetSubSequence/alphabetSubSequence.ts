@@ -22,17 +22,10 @@ console.log(alphabetSubSequence("effg"));
 console.log(alphabetSubSequence("cdce"));
 
 function testReturnFalseInsideAForEach():boolean{
-    let myString: string = "this is a test";
+    let myString: string = "test";
     let stringArray: string[] = myString.split("");
     stringArray.forEach((letter: string)=>{
         return false;
-        if (false){
-            console.log("hello");
-        }
-        else{
-            return false;
-        }
-
     })
     return true;
 }
