@@ -4,7 +4,6 @@ function alternatingSums(weights: number[]): number[] {
     let groupTwoTotal = 0;
     for (let i: number = 0; i < weights.length; i++) {
         if ((i + 1) % 2 > 0) {
-            console.log(weights[i])
             groupOneTotal += weights[i];
         }
         else {
