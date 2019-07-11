@@ -15,7 +15,4 @@ function alternatingSums(weights: number[]): number[] {
     return returnValue;
 }
 
-console.log(1 % 2)
-
-
 console.log(alternatingSums([50, 60, 60, 45, 70]));
