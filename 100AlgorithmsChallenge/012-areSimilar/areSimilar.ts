@@ -17,7 +17,18 @@ function areSimilar(arrayOne: number[], arrayTwo: number[]): boolean {
     return false;
 }
 
+// Helps if you know the framework
 function allAreEqual(arrayOne: number[], arrayTwo: number[]): boolean {
+    return (arrayOne.toString() === arrayTwo.toString())
+}
+
+function allAreEqual3(arrayOne: number[], arrayTwo: number[]): boolean {
+    if (arrayOne.toString() === arrayTwo.toString()){
+        return true;
+    }
+    return false;
+}
+function allAreEqual2(arrayOne: number[], arrayTwo: number[]): boolean {
     let allAreEqual: boolean = true;
     for (let i: number = 0; i < arrayOne.length; i++) {
         if (arrayOne[i] !== arrayTwo[i]) {
