@@ -4,12 +4,12 @@ function containsCloseNums(inputArray: number[], rangeOrLess: number): boolean {
     for(let i: number = 0; i < inputArray.length - 1; i++){
         for(let j: number = i+1; j < inputArray.length; j++){
             if(j-i <= rangeOrLess){
-                if(inputArray[i].toString() === inputArray[j].toString()){
+                if(inputArray[i] === inputArray[j]){
                     return true;
                 }
             }
             else{
-                j = inputArray.length;
+                j = inputArray.length;  // end current j loop
             }
         }
     }
