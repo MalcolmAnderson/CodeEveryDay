@@ -7,7 +7,17 @@ function arrayReplace(inputArray: number[], elementToReplace: number, replacemen
     return inputArray;
 }
 
+function dylansArrayReplace(inputArray: number[], elementToReplace: number, replacement: number): number[] {
+    inputArray.forEach((element, index) => {
+        if(element === elementToReplace){
+            inputArray[index] = replacement;
+        }
+    });
+    return inputArray;
+}
 
+
+console.log(dylansArrayReplace([1, 2, 1], 1, 3));
 
 console.log(arrayReplace([1, 2, 1], 1, 3));
 
