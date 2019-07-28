@@ -1,23 +1,29 @@
 function avoidObstacles(inputArray: number[]): number {
-    let sortedArray: number[] = inputArray.sort(sortNumber);
-    let smallestJump = sortedArray[sortedArray.length - 1] + 1;
-    //for (let i: number = smallestJump - 2; i >= 0; i--) {
+    let sortedArray: number[] = inputArray.sort((a, b) => a - b);
+    let highestNumberInArray: number = sortedArray[sortedArray.length - 1];
+    for (let i: number = 2; i <= highestNumberInArray + 1; i++) {
+        if(sortedArray.every((element)=> element % i !== 0)){
+            return i;
+        }
+    }
+    return -1;
+}
+
+function avoidObstaclesOriginal(inputArray: number[]): number {
+    let sortedArray: number[] = inputArray.sort((a, b) => a - b);
+    let highestNumberInArray: number = sortedArray[sortedArray.length - 1];
+    let smallestJump = highestNumberInArray + 1;
     for (let i: number = smallestJump - 2; i > 1; i--) {
-        if (jumpAvoidsObstacles(sortedArray, i)) {
+        if (jumpAvoidsObstacles(sortedArray, i, highestNumberInArray)) {
             smallestJump = i;
         }
     }
     return smallestJump;
 }
 
-function sortNumber(a, b) {
-    return a - b;
-}
-
-function jumpAvoidsObstacles(inputArray: number[], jumpSizeCandidate:number) {
-    let highestNumber = inputArray[inputArray.length - 1];
+function jumpAvoidsObstacles(inputArray: number[], jumpSizeCandidate:number, highestNumberInArray:number) {
     let i: number = 1;
-    while ((i * jumpSizeCandidate) <= highestNumber) {
+    while ((i * jumpSizeCandidate) <= highestNumberInArray) {
         if (inputArray.includes(i * jumpSizeCandidate)) {
             return false;
         }
