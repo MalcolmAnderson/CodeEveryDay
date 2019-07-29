@@ -1,9 +1,18 @@
 function bishopAndPawn(bishop: string, pawn: string): boolean {
     let bishopStringArray: string[]  = bishop.split('');
-    bishopStringArray[0] = bishopStringArray[0]
-    let bishopNumberArray: number[]  = bishopStringArray.forEach(Number())
-    
-    return false;
+    let bishopNumberArray: number[] = [];
+    bishopNumberArray[0] = bishopStringArray[0].charCodeAt(0)-96;
+    bishopNumberArray[1] = parseInt(bishopStringArray[1]);
+
+    let pawnStringArray: string[] = pawn.split('');
+    let pawnNumberArray: number[] = [];
+    pawnNumberArray[0] = pawnStringArray[0].charCodeAt(0)-96;
+    pawnNumberArray[1] = parseInt(pawnStringArray[1]);
+
+    let xDiff = Math.abs(bishopNumberArray[0]-pawnNumberArray[0]);
+    let yDiff = Math.abs(bishopNumberArray[1]-pawnNumberArray[1]);
+
+    return xDiff === yDiff;
 }
 
 
