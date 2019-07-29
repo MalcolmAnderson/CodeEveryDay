@@ -1,7 +1,15 @@
 function bishopAndPawn(bishop: string, pawn: string): boolean {
+    let bishopStringArray: string[]  = bishop.split('');
+    bishopStringArray[0] = bishopStringArray[0]
+    let bishopNumberArray: number[]  = bishopStringArray.forEach(Number())
     
     return false;
 }
+
+
+console.log("a2".split(""));
+console.log("a".charCodeAt(0)-96)
+console.log( "1" .charCodeAt(0)-96)
 
 console.log(bishopAndPawn('a1', 'c3'));
 console.assert(bishopAndPawn('a1', 'c3'), "bishopAndPawn('a1', 'c3') should equal true");
