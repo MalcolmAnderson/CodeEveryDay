@@ -14,10 +14,23 @@ int main()
     cout << "Hello World!\n";
 	//string output = checkPalindrome("aaabaaa") ? "is true" : "is false";
 	//cout << output;
-	RealEstateOutput();
+	zerotwo_01_arrays();
 
 
 	return 0;
+}
+
+void zerotwo_01_arrays() {
+	double values[10];						//declare an array values with 10 elements
+	double* pValue = values;				//define a pointer to the array
+	cout << "value array address: " << values << endl;
+	cout << "pValues: " << pValue << endl;
+
+	int numbers[10];
+	int* pNumbers = numbers;
+	for (int i = 0; i < 10; i++) {
+		cout << "numbers address " << i << ": " << pNumbers + i << endl;
+	}
 }
 
 void RealEstateOutput() {
