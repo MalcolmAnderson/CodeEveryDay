@@ -1,10 +1,13 @@
 function isCaseInsensitivePalindrome(inputString: string): boolean {
+    let returnValue: boolean = true;
     for (let i: number = 0; i < inputString.length / 2; i++){
+        //console.log(i);
         if(inputString[i].toLowerCase() !== inputString[inputString.length-1-i].toLowerCase()){
-            return false;
+            returnValue = false;
+            break;
         }
     }
-    return true;
+    return returnValue;
 }
 
 console.assert(isCaseInsensitivePalindrome('AaBaa'),"isCaseInsensitivePalindrome('AaBaa') should be true", isCaseInsensitivePalindrome('AaBaa'));
@@ -13,3 +16,4 @@ console.assert(isCaseInsensitivePalindrome('abac'),"isCaseInsensitivePalindrome(
 console.log(isCaseInsensitivePalindrome('abac'));
 console.log(isCaseInsensitivePalindrome('abba'));
 console.log(isCaseInsensitivePalindrome('aba'));
+console.log(isCaseInsensitivePalindrome('aaaaaabaaaaxa'));
