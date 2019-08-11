@@ -18,15 +18,15 @@ function isBlack(cell: string): boolean {
 }
 
 
-function chessBoardCellColor(cell1: string, cell2: string): boolean {
+function cellColor(cell1: string, cell2: string): boolean {
     return isBlack(cell1) === isBlack(cell2);
 }
 
 console.log(isBlack("H3"));
 console.log(isBlack("A1"));
 
-console.assert(chessBoardCellColor('A1', 'C3'), "chessBoardCellColor('A1', 'C3') should be true", chessBoardCellColor('A1', 'C3'));
-console.assert(!chessBoardCellColor('A1', 'H3'), "chessBoardCellColor('A1', 'H3') should be false", chessBoardCellColor('A1', 'H3'));
+console.assert(cellColor('A1', 'C3'), "cellColor('A1', 'C3') should be true", cellColor('A1', 'C3'));
+console.assert(!cellColor('A1', 'H3'), "cellColor('A1', 'H3') should be false", cellColor('A1', 'H3'));
 
-console.log(chessBoardCellColor('A1', 'C3'));
-console.log(chessBoardCellColor('A1', 'H3'));
+console.log(cellColor('A1', 'C3'));
+console.log(cellColor('A1', 'H3'));
