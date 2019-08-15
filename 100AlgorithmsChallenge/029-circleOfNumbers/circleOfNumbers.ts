@@ -1,5 +1,5 @@
 function circleOfNumbers(n: number, firstNumber: number): number {
-    return -1;
+    return Math.floor(n/2) + firstNumber;
 }
 
 
