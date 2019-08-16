@@ -15,8 +15,8 @@ function assertIsEqual(actual: string, expected: any) {
 
 function commonCharacters(s1: string, s2: string): string {
     // str1 should be shorter or equal to str2
-    let str1: string[] = (s2.length > s1.length ? s1.split('') : s2.split(''));
-    let str2: string[] = (s2.length > s1.length ? s2.split('') : s1.split(''));
+    let str1: string[] = (s2.length >= s1.length ? s1.split('') : s2.split(''));
+    let str2: string[] = (s2.length >= s1.length ? s2.split('') : s1.split(''));
     let myOut: string[] = [];
     while(str1.length > 0){
         let candidate: string = str1[0];
@@ -40,7 +40,7 @@ function commonCharacterCount(s1: string, s2: string): number {
 
 
 
-assertIsEqual("commonCharacters('aabcc', 'adcaa')", "aca");
+assertIsEqual("commonCharacters('aabcc', 'adcaa')", "aac");
 assertIsEqual("commonCharacterCount('aabcc', 'adcaa')", 3);
 
 console.log(commonCharacterCount('aabcc', 'adcaa'));
