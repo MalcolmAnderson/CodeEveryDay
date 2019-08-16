@@ -1,24 +1,25 @@
+
 function circleOfNumbers(n: number, firstNumber: number): number {
     return Math.floor(n/2) + firstNumber;
 }
 
 
-function myIsEqualAssert(actual: string, expected: any) {
+ function assertIsEqual(actual: string, expected: any) {
     let assertString: string = actual + " === " + expected;
     console.assert(eval(assertString), (actual + " should equal " + expected + " but is"), eval(actual));
 }
 
-function myIsTrueAssert(actual: string) {
+ function assertIsTrue(actual: string) {
     console.assert(eval(actual), (actual + " should be true but is"), eval(actual));
 }
-function myIsFalseAssert(actual: string) {
+ function assertIsFalse(actual: string) {
     console.assert(!eval(actual), (actual + " should be false but is"), eval(actual));
 }
 
-myIsTrueAssert("false");
-myIsFalseAssert("true");
+assertIsTrue("false");
+assertIsFalse("true");
 
-myIsEqualAssert("circleOfNumbers(10, 2)", 7);
+assertIsEqual("circleOfNumbers(10, 2)", 7);
 
 let actual: string = "circleOfNumbers(10, 2)";
 let expected = 7;
