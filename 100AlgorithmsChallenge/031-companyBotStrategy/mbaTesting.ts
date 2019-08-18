@@ -1,7 +1,7 @@
 // Note, Quokka doesn't support imports, so these functions are copied into main as needed.
 
 // new version
-// function assertIsEqual(actual: string, expected: any) {
+// function assertIsEqualToString(actual: string, expected: any) {
 //     let assertString = "";
 //     if(typeof(expected)==="string"){
 //         assertString = actual + " === \"" + expected +"\"";
