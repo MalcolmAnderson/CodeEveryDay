@@ -9,12 +9,12 @@ Given an integer, find its digit degree.
 **Example**
 
 - For n = 5, the output should be
-digitDegree(n) = 0;
+digitDegree(n) = 0;  
 - For n = 100, the output should be
-digitDegree(n) = 1.
+digitDegree(n) = 1.  
 1 + 0 + 0 = 1.
 - For n = 91, the output should be
-digitDegree(n) = 2.
+digitDegree(n) = 2.  
 9 + 1 = 10 -> 1 + 0 = 1.
 
 **Hints**
