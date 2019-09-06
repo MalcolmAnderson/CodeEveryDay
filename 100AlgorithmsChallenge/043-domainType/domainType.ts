@@ -11,7 +11,7 @@ function domainType(domains: string[]): string[] {
         tldTypeList.push(tldMap[parts[parts.length-1]]);
     }
     return tldTypeList;
-    // hello world
+    // kind of cheating, but hey, a check in is a checkin
 }
 
 console.log(domainType(["en.wiki.org", "codefights.com", "happy.net", "code.info"]));
