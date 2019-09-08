@@ -14,8 +14,9 @@ function electionsWinners(votes: number[], k: number): number {
     let possibleWinners = votes.length;
     let highestVoteTotal = Math.max(...votes);
     //let sortedVotes = votes.sort(function (a, b) { return a - b });
-    for(let i: number = 0; i < votes.length; i++){
-        if ( (votes[i] + k) <= highestVoteTotal){
+    //let sortedVotes = votes.sort((a, b) => b - a);
+    for (let i: number = 0; i < votes.length; i++) {
+        if ((votes[i] + k) <= highestVoteTotal) {
             possibleWinners--;
         }
     }
