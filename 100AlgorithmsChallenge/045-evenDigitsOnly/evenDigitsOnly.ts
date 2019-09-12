@@ -10,6 +10,17 @@ function assertIsEqual(actual: string, expected: any) {
 
 
 function evenDigitsOnly(n: number): boolean {
+    const digits: string[] = n.toString().split('');
+    return digits.every((digit => parseInt(digit) % 2 === 0));
+}
+
+function evenDigitsOnly_dylans_modified(n: number): boolean {
+    const numArray: string[] = n.toString().split('');
+    let returnValue: boolean = numArray.every((numElement => parseInt(numElement) % 2 === 0));
+    return returnValue;
+}
+
+function evenDigitsOnly_mine(n: number): boolean {
     const numArray: string[] = n.toString().split('');
     let returnValue: boolean = true;
     for (let i: number = 0; i < numArray.length; i++) {
@@ -19,7 +30,6 @@ function evenDigitsOnly(n: number): boolean {
         }
     }
     return returnValue;
-
 }
 
 assertIsEqual("evenDigitsOnly(248622)", true);
