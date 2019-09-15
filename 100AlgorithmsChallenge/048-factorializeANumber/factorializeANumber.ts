@@ -10,10 +10,17 @@ function assertIsEqual(actual: string, expected: any) {
 
 
 function factorializeANumber(num: number): number {
+    if (num === 0) {
+        return 1;
+    }
+    return num * factorializeANumber(num - 1);
+}
+
+function factorializeANumber_first(num: number): number {
     let total: number = 1;
-    for(let i: number = 2; i <= num; i++){
+    for (let i: number = 2; i <= num; i++) {
         total *= i;
-    } 
+    }
     return total;
 }
 
