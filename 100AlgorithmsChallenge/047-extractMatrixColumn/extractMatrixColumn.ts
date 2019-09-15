@@ -1,6 +1,12 @@
 function extractMatrixColumn(matrix: number[][], column: number): number[] {
     const returnArray: number[] = [];
-    for(let i: number = 0; i < matrix.length; i++){
+    matrix.forEach((row) => returnArray.push(row[column]));
+    return returnArray;
+}
+
+function extractMatrixColumn_mine(matrix: number[][], column: number): number[] {
+    const returnArray: number[] = [];
+    for (let i: number = 0; i < matrix.length; i++) {
         returnArray.push(matrix[i][column]);
     }
     return returnArray;
