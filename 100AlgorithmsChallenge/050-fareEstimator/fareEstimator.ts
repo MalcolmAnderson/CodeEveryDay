@@ -2,7 +2,7 @@ function fareEstimator(ride_time: number, ride_distance: number, cost_per_minute
     const fareCost: number[] = [];
     let exception: boolean = cost_per_minute.length !== cost_per_mile.length;
     for(let i: number = 0; i < cost_per_mile.length; i++){
-        fareCost.push((cost_per_minute[i] * ride_time) + (cost_per_mile[i] * ride_distance));
+        fareCost.push(Math.round(((cost_per_minute[i] * ride_time) + (cost_per_mile[i] * ride_distance)))/100);
     }    
     return fareCost;
 }
