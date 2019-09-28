@@ -1,6 +1,6 @@
 function findClosestPair(numbers: number[], sum: number): number {
    let lowestMatch: number = -1
-    for(let i: number = 0; i < numbers.length; i++){
+    for(let i: number = 0; i < numbers.length - 1; i++){
         for(let j: number = i + 1; j < numbers.length; j++){
             if(numbers[i] + numbers[j] === sum){
                 if(lowestMatch < 0){
