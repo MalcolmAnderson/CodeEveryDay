@@ -9,10 +9,7 @@ function assertIsEqual(actual: string, expected: any) {
     console.assert(eval(assertString), (actual + " should equal " + expected + " but is"), eval(actual));
 }
 
-
-
-
-function firstNotRepeatingCharacter(s: string): string {
+function firstNotRepeatingCharacter_mine(s: string): string {
     let returnVal: string = "_";
     const repeating: string[] = [];
     const nonRepeating: string[] = [];
@@ -30,8 +27,35 @@ function firstNotRepeatingCharacter(s: string): string {
     if (nonRepeating.length > 0) {
         returnVal = nonRepeating[0];
     }
-
     return returnVal;
+}
+
+
+// Dylans
+function firstNotRepeatingCharacter(s: string): string {
+    const chars: string[] = s.split('');
+    let duplicates = {};
+    let answer = '_';
+    let indexAnswer = Number.MAX_SAFE_INTEGER;
+
+    chars.forEach((element, index) => {
+        if(!duplicates.hasOwnProperty(element)){
+            duplicates[element] = {
+                count: 1,
+                index
+            };
+        } else {
+            duplicates[element].count++;
+            duplicates[element].index = index;
+        }
+    })
+    for (const key in duplicates){
+        if(duplicates[key].count === 1 && duplicates[key].index < indexAnswer){
+            answer = key;
+            indexAnswer = duplicates[key].index
+        }
+    }
+    return answer;
 }
 
 
