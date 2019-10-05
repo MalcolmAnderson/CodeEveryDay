@@ -1,0 +1,3 @@
+# typescript file, ignore compiled .js files
+*.js
+

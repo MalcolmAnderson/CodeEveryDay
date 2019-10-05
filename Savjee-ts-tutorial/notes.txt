@@ -1,0 +1,19 @@
+install and version check
+node (node)
+	node -v
+
+npm (node package manager)
+	npm -v
+
+tsc (typescript)
+	tsc -v 
+	
+run a js program
+	node programName.js
+
+compile ts code to js code
+	tsc programName.ts
+	
+
+
+	
