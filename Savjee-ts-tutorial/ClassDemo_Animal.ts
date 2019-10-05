@@ -1,5 +1,6 @@
-class Animal {
+abstract class Animal {
   private name: string;
+  
 
   constructor(theName: string) {
     this.name = theName;
@@ -10,5 +11,20 @@ class Animal {
   }
 }
 
-let myAnimal = new Animal("Dave");
+class Dog extends Animal {
+    constructor(theName: string){
+        super(theName);
+    }
+}
+
+let myAnimal = new Dog("Dave");
 myAnimal.walk(10);
+
+class Snake extends Animal{
+    constructor(theName: string){
+        super(theName);
+    }
+    walk(distance: number){
+        console.log("Snakes don't really walk");
+    }
+}
