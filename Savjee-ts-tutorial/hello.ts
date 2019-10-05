@@ -7,6 +7,14 @@ function logGreeter(person: string): void {
   console.log("Bonjour, " + person);
 }
 
+// Text, string
+let myName: string = "Malcolm";
+
+// Normal strings
+let greeting: string = "Hello, " + myName;
+// Template strings (must use ` (lower case ~) and $)
+let greeting2: string = `Hello, ${myName}`;
+
 enum Directions {
   Up,
   Down,
