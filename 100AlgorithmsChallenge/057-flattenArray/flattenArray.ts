@@ -1,5 +1,4 @@
 function returnArrayContents(candidate: any, holdingBin: any[]): any[]{
-    console.log(Array.isArray(candidate));
     if(!Array.isArray(candidate)){
         holdingBin.push(candidate);
         return holdingBin;
