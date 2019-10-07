@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}\\014-arrayConversion\\arrayConversionRecursive.ts",
+            "program": "${workspaceFolder}\\056-firstNotRepeatingCharacter\\firstNotRepeatingCharacter.ts",
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
             ]
