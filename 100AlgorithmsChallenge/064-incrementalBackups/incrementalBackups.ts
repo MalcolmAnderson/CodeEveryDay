@@ -7,7 +7,7 @@ function incrementalBackups(lastBackupTime: number, changes: number[][]): number
             toBeBackedUp.push(changes[i][1]);
         }
     }
-    return toBeBackedUp.sort();
+    return toBeBackedUp.sort((a, b) => a - b);
 }
 
 
