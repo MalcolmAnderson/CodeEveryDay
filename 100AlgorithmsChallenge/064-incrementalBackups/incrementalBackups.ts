@@ -1,7 +1,9 @@
 function incrementalBackups(lastBackupTime: number, changes: number[][]): number[] {
     const toBeBackedUp: number[] = [];
     for(let i: number = 0; i< changes.length; i++){
-        if(!toBeBackedUp.includes(changes[i][1]) && changes[i][0] > lastBackupTime){
+        const fileNumberAlreadyExists: boolean = toBeBackedUp.includes(changes[i][1]);
+        const fileWasModifiedAfterLastBackup = changes[i][0] > lastBackupTime
+        if(!fileNumberAlreadyExists && fileWasModifiedAfterLastBackup){
             toBeBackedUp.push(changes[i][1]);
         }
     }
