@@ -1,4 +1,20 @@
 function launchSequenceChecker(systemNames: string[], stepNumbers: number[]): boolean {
+    const launchCodes: Object = {};
+
+    for(let i: number = 0; i < systemNames.length; i++){
+        if(launchCodes.hasOwnProperty(systemNames[i])){
+            if(launchCodes[systemNames[i]] >= stepNumbers[i]){
+                return false;
+            } 
+            launchCodes[systemNames[i]] = stepNumbers[i];
+        } else {
+            launchCodes[systemNames[i]] = stepNumbers[i];
+        }
+    }
+    return true;
+}
+
+function launchSequenceChecker_mine(systemNames: string[], stepNumbers: number[]): boolean {
     const systems: Object = new Object();
     for(let i: number = 0; i < systemNames.length; i++){
         if(!systems.hasOwnProperty(systemNames[i])){
