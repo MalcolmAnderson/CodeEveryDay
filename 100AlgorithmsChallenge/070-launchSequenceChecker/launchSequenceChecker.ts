@@ -6,10 +6,8 @@ function launchSequenceChecker(systemNames: string[], stepNumbers: number[]): bo
             if(launchCodes[systemNames[i]] >= stepNumbers[i]){
                 return false;
             } 
-            launchCodes[systemNames[i]] = stepNumbers[i];
-        } else {
-            launchCodes[systemNames[i]] = stepNumbers[i];
         }
+        launchCodes[systemNames[i]] = stepNumbers[i];
     }
     return true;
 }
