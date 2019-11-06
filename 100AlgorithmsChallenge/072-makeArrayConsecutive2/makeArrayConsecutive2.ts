@@ -18,3 +18,4 @@ console.log(makeArrayConsecutive2([6, 3]));
 console.log(makeArrayConsecutive2([16, 3]));
 
 // add comment
+// add comment
