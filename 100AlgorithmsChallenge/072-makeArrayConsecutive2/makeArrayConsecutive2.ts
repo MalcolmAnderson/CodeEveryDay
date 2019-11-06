@@ -1,5 +1,6 @@
 function makeArrayConsecutive2(statues: number[]): number {
-    statues = statues.sort();
+    statues = statues.sort((a,b)=> a-b);
+    console.log(statues);
     let numberOfNewStatues: number = 0;
     let curretNumber: number = statues[0];
     for(let i: number = 1; i < statues.length; i++){
@@ -14,4 +15,5 @@ console.log(makeArrayConsecutive2([8]));
 console.log(makeArrayConsecutive2([2, 3]));
 console.log(makeArrayConsecutive2([2, 4]));
 console.log(makeArrayConsecutive2([6, 3]));
+console.log(makeArrayConsecutive2([16, 3]));
 
