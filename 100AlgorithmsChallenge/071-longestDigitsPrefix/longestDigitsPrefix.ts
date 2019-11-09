@@ -1,4 +1,16 @@
+// my version of dylan's version
 function longestDigitsPrefix(inputString: string): string {
+    let prefix: string = '';
+    for(let char of inputString){
+        if(isNaN(parseInt(char))){
+            break;
+        }
+        prefix += char;
+    }
+    return prefix;
+}
+
+function longestDigitsPrefix_mine(inputString: string): string {
     const prefix: string[] = [];
     for(let i: number = 0; i < inputString.length; i++){
         let candidate: number = parseInt(inputString[i]);
@@ -9,7 +21,7 @@ function longestDigitsPrefix(inputString: string): string {
             prefix.push(inputString[i]);
         }
     }
-    return prefix.join();
+    return prefix.join('');
 }
 
 console.log(longestDigitsPrefix('123aa1'));
