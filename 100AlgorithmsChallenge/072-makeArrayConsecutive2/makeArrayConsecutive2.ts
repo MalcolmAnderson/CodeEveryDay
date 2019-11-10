@@ -1,4 +1,18 @@
+// dylan's
 function makeArrayConsecutive2(statues: number[]): number {
+    let numberOfNewStatues: number = 0;
+    const sortedStatues = statues.sort((a,b)=> a-b);
+    const min = sortedStatues[0];
+    const max = sortedStatues[sortedStatues.length - 1];
+    for(let i: number = min; i < max; i++){
+        if(!statues.includes(i)){
+            numberOfNewStatues++;
+        }
+    }
+    return numberOfNewStatues;
+}
+
+function makeArrayConsecutive2_mine(statues: number[]): number {
     statues = statues.sort((a,b)=> a-b);
     console.log(statues);
     let numberOfNewStatues: number = 0;
