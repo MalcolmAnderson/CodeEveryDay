@@ -1,17 +1,12 @@
 function pagesNumberingWithInk(current: number, numberOfDigits: number): number {
     let lastPage: number = current - 1;
-    let digitsUsed: number = 0;
-    while(digitsUsed < numberOfDigits){
-        if(lastPage + 1 < 10){
+    let digitsLeft: number = numberOfDigits;
+    while(digitsLeft > 0){
+        const numLengthOfNextPage = (lastPage + 1).toString().length;
+        if(digitsLeft >= numLengthOfNextPage){
             lastPage++;
-            digitsUsed++;
-        } else if (lastPage + 1 < 100 && numberOfDigits - digitsUsed >= 2) {
-            lastPage++;
-            digitsUsed += 2;
-        } else {
-            console.log(numberOfDigits - digitsUsed);
-            break;
         }
+        digitsLeft -= numLengthOfNextPage;
     }
     return lastPage;
 }
