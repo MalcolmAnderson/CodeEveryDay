@@ -1,5 +1,21 @@
-// Dylan's
+// My variation on Dylan's
+// while I *can* do ++ and -- in the line of code, it's more obfuscated, and a bad practice
+// I just wanted to find out if I *could* do it in the middle of string interpolation
+// (And I *can*)
 function newNumeralSystem(number: string): string[] {
+    const numerals: string[] = [];
+    let startCharCount = 65;
+    let endCharCount = number.charCodeAt(0);
+
+    while(startCharCount <= endCharCount) {
+        const numeral = `${String.fromCharCode(startCharCount++)} + ${String.fromCharCode(endCharCount--)}`;
+        numerals.push(numeral);
+    }
+    return numerals;
+}
+
+// Dylan's
+function newNumeralSystem_Dylans(number: string): string[] {
     const numerals: string[] = [];
     let startCharCount = 65;
     let endCharCount = number.charCodeAt(0);
