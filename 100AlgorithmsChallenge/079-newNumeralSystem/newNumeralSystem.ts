@@ -1,4 +1,20 @@
+// Dylan's
 function newNumeralSystem(number: string): string[] {
+    const numerals: string[] = [];
+    let startCharCount = 65;
+    let endCharCount = number.charCodeAt(0);
+
+    while(startCharCount <= endCharCount) {
+        const numeral = `${String.fromCharCode(startCharCount)} + ${String.fromCharCode(endCharCount)}`;
+        numerals.push(numeral);
+        startCharCount++;
+        endCharCount--;
+    }
+    return numerals;
+}
+
+
+function newNumeralSystem_mine(number: string): string[] {
     const letters: object = getLetterCodeObject();
     const mathFacts: string[] = [];
     //console.log(letters['Z']);
@@ -27,5 +43,7 @@ function getLetterCodeObject(): object{
     return letters;
 }
 
+//                                   [ 'A + G', 'B + F', 'C + E', 'D + D' ]
 console.log(newNumeralSystem('G'));
+//                                   [ 'A + H', 'B + G', 'C + F', 'D + E' ]
 console.log(newNumeralSystem('H'));
