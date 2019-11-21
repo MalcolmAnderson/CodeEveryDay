@@ -1,4 +1,16 @@
+// Dylan's
 function pagesNumberingWithInk(current: number, numberOfDigits: number): number {
+    while(numberOfDigits >= current.toString().length){
+        // validate *this* number
+        numberOfDigits -= current.toString().length;
+        // pre-validate the *next* number
+        if(numberOfDigits >= current.toString().length){
+            current++;
+        }
+    }
+    return current;
+}
+function pagesNumberingWithInk_mine(current: number, numberOfDigits: number): number {
     let lastPage: number = current - 1;
     let digitsLeft: number = numberOfDigits;
     while(digitsLeft > 0){
