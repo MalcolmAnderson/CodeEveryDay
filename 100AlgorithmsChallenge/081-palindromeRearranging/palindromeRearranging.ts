@@ -1,31 +1,30 @@
 function palindromeRearranging(inputString: string): boolean {
-    const letters: object = {}
+    const charCount: object = getCharacterCountsFromString(inputString);
+    return isPalindromeIfNoMoreThanOneCharCountIsOdd(charCount);
+}
 
-    for(let i: number = 0; i < inputString.length; i++){
-        const thisLetter = inputString[i].toUpperCase();
-        if(letters.hasOwnProperty(thisLetter)){
-            letters[thisLetter]++;
-        } else {
-            letters[thisLetter] = 1;
-        }
-    }
+function isPalindromeIfNoMoreThanOneCharCountIsOdd(charCount: object): boolean{
     let oddCount = 0;
-    for(let element in letters){
-        if(letters[element] % 2 !== 0){
+    for(let element in charCount){
+        if(charCount[element] % 2 !== 0){
             oddCount++;
         }
     }
     return oddCount > 1 ? false : true;
 }
 
-// function getLetterCodeObject(): object{
-//     const letters: object = {}
-//     let capANumberCode = 'A'.charCodeAt(0);
-//     for(let i: number = 0; i < 26; i++){
-//         letters[String.fromCharCode(capANumberCode + i)] = 0;
-//     }
-//     return letters;
-// }
+function getCharacterCountsFromString(inputString: string): object{
+    const charCount: object = {};
+    const chars = inputString.split('');
+    for(let char of chars){
+        if(charCount.hasOwnProperty(char)){
+            charCount[char]++;
+        } else {
+            charCount[char] = 1;
+        }
+    }
+    return charCount;
+}
 
 console.log(palindromeRearranging('aabb'));
 console.log(palindromeRearranging('daabb'));
