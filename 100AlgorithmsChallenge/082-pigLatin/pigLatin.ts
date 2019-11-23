@@ -4,12 +4,22 @@ function pigLatin(str: string): string {
     if(locationOfFirstVowel === 0){
         return str.concat("way");
     } else {
-        for(let i: number = locationOfFirstVowel; i < str.length; i++){
-            igpayAtinLay.push(str[i]);
+        const stem: string[] = [];
+        for(let i: number = 0; i < str.length; i++){
+            if(i < locationOfFirstVowel){
+                stem.push(str[i]);
+            } else {
+                igpayAtinLay.push(str[i]);
+            }
         }
-        for(let i: number = 0; i < locationOfFirstVowel; i++){
-            igpayAtinLay.push(str[i]);
-        }
+        igpayAtinLay.push(stem.join(''));
+        igpayAtinLay.push('ay');
+        // for(let i: number = locationOfFirstVowel; i < str.length; i++){
+        //     igpayAtinLay.push(str[i]);
+        // }
+        // for(let i: number = 0; i < locationOfFirstVowel; i++){
+        //     igpayAtinLay.push(str[i]);
+        // }
         igpayAtinLay.push('ay');
     }
     return igpayAtinLay.join('');
