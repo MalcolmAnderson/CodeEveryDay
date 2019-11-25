@@ -1,55 +1,59 @@
 function proCategorization(pros: string[], preferences: string[][]): string[][][] {
     const skills: object = populateSkillsObject(pros, preferences);
-    console.log(skills);
+    //console.log(skills);
 
-    const skillList: string[] = [];
+    const orderdSkillList: string[] = [];
     for (let subSkill in skills) {
-        skillList.push(subSkill);
+        orderdSkillList.push(subSkill);
     }
-    console.log(skillList);
-    skillList.sort();
+    orderdSkillList.sort();
 
+    const outputArray: string[][][] = add_CollectionOfSkills_With_ListOfProfessionalWithThatSkill_ToOutputArray(skills, orderdSkillList);
+    return outputArray;
+}
+
+function add_CollectionOfSkills_With_ListOfProfessionalWithThatSkill_ToOutputArray(skills, orderdSkillList): string[][][]{
     const outputArray: string[][][] = [];
-    
-
-    for (let skillAsNumber: number = 0; skillAsNumber < skillList.length; skillAsNumber++) {
+    for (let skillAsNumber: number = 0; skillAsNumber < orderdSkillList.length; skillAsNumber++) {
         const outputRow: string[][] = [];
+        
         const thisSkill: string[] = [];
-        thisSkill.push(skillList[skillAsNumber]);
+        thisSkill.push(orderdSkillList[skillAsNumber]);
         outputRow.push(thisSkill);
-        const professionalsWithThisSkill = skills[skillList[skillAsNumber]]
+
+        const professionalsWithThisSkill = skills[orderdSkillList[skillAsNumber]]
         outputRow.push(professionalsWithThisSkill);
+        
         outputArray.push(outputRow);
     }
     return outputArray;
 }
 
 
-
 function populateSkillsObject(pros: string[], preferences: string[][]): object {
     const skills: object = {};
     for (let pro: number = 0; pro < pros.length; pro++) {
-        console.log(preferences[pro].length)
+        //console.log(preferences[pro].length)
         for (let job: number = 0; job < preferences[pro].length; job++) {
-            console.log(skills);
-            console.log(preferences[pro][job]);
+            //console.log(skills);
+            //console.log(preferences[pro][job]);
             if (skills.hasOwnProperty(preferences[pro][job])) {
                 skills[preferences[pro][job]].push(pros[pro]);
             } else {
                 skills[preferences[pro][job]] = [pros[pro]];
-                console.log(skills[preferences[pro][job]])
+                //console.log(skills[preferences[pro][job]])
             }
         }
     }
-    console.log(skills);
+    //console.log(skills);
     return skills;
 }
 
 
 // [ [ [ "Computer repair" ], [ "Jack" ] ] ];
-//console.log(proCategorization(["Jack"], [["Computer repair"]]));
+console.log(proCategorization(["Jack"], [["Computer repair"]]));
 
-//console.log(proCategorization(["Jack", "Leon"], [["Computer repair"], ["Computer lessons"]]));
+console.log(proCategorization(["Jack", "Leon"], [["Computer repair"], ["Computer lessons"]]));
 
 // [ 
 //    [ 
@@ -60,7 +64,7 @@ function populateSkillsObject(pros: string[], preferences: string[][]): object {
 // ];
 // console.log(proCategorization(["Jack"], [["Handyman", "House cleaning"]]));
 
-//console.log(proCategorization(["Jack"], [["Computer repair", "Handyman", "House cleaning"]]));
+console.log(proCategorization(["Jack"], [["Computer repair", "Handyman", "House cleaning"]]));
 
 
 // For pros = ["Jack", "Leon", "Maria"] and
