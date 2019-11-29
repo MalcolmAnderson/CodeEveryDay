@@ -1,7 +1,7 @@
 function ratingThreshold(threshold: number, ratings: number[][]): number[] {
     const belowThreshold: number[] = [];
     for(let i: number = 0; i < ratings.length; i++){
-        let sum: number = ratings[i].reduce((acc, val) => acc + val);
+        const sum: number = ratings[i].reduce((acc, val) => acc + val);
         if(sum / ratings[i].length < threshold){
             belowThreshold.push(i);
         }
