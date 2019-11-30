@@ -41,6 +41,7 @@ app.post('/', function (req, res) {
             if (weather.main == undefined) {
                 res.render('index', { weather: null, error: '[1002] Error, please try again' });
             } else {
+                console.log('1001 entered else clause because weather.main != undefined')
                 var sunset = new Date(weather.sys.sunset * 1000);
                 //sunset = toLocalDate(sunset);
                 var sunsetString = getFormattedTime(sunset);

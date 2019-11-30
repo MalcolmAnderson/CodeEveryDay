@@ -8,6 +8,35 @@ String.prototype.paddingLeft = function (paddingValue) {
     return String(paddingValue + this).slice(-paddingValue.length);
 };
 
+function doSomethingWithEpocDate(dateAsEpocString) {
+    let dt = new Date(dateAsEpocString);
+    console.log(dt);
+}
+
+function toLocalDate(inDate) {
+    var date = new Date();
+    var numberOfMillisecondsInAnMinute = 60000
+    var numberOfMinutesOffsetFromUtc = inDate.getTimezoneOffset();
+    var UtcOffsetInMilliseconds = numberOfMillisecondsInAnMinute * numberOfMinutesOffsetFromUtc;
+    date.setTime(inDate.valueOf() - UtcOffsetInMilliseconds);
+    return date;
+}
+
+
+function getFormattedTime(inDate) {
+    const date = new Date(inDate);  // This requirement is dumb
+    date.getTimezoneOffset();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+
+    hours = hours.toString().paddingLeft("00");
+    minutes = minutes.toString().paddingLeft("00");
+
+    return "{0}:{1}".format(hours, minutes);
+};
+
+
+
 
 const request = require('request');
 const argv = require('yargs').argv;
@@ -32,7 +61,7 @@ request(url, function (err, response, body) {
         doSomethingWithEpocDate(weather.sys.sunrise);
 
         let message = `Today's Pullman Sunrise & Sunset: ${weather.sys.sunrise} - ${weather.sys.sunset}`;
-        console.log('Sunrise: ' + weather.sys.sunrise);
+        console.log('Sunrise: ' + getFormattedTime(weather.sys.sunrise));
         console.log('Weather.main: ' + weather.main);
         console.log('body: ', body);
         console.log(message);
@@ -45,31 +74,5 @@ var utcSeconds = 1575072241;
 var d = new Date(utcSeconds * 1000);
 d = toLocalDate(d);
 console.log(getFormattedTime(d));
-
-function doSomethingWithEpocDate(dateAsEpocString){
-    let dt = Date(dateAsEpocString);
-    console.log(dt);
-}
-
-
-function toLocalDate(inDate) {
-    var date = new Date();
-    var numberOfMillisecondsInAnMinute = 60000
-    var numberOfMinutesOffsetFromUtc = inDate.getTimezoneOffset();
-    var UtcOffsetInMilliseconds = numberOfMillisecondsInAnMinute * numberOfMinutesOffsetFromUtc;
-    date.setTime(inDate.valueOf() - UtcOffsetInMilliseconds);
-    return date;
-}
-
-
-function getFormattedTime(date) {
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
-
-    hours = hours.toString().paddingLeft("00");
-    minutes = minutes.toString().paddingLeft("00");
-
-    return "{0}:{1}".format(hours, minutes);
-};
 
 
