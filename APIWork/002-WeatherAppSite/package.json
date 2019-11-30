@@ -1,7 +1,7 @@
 {
-  "name": "apiwork",
+  "name": "002-weatherappsite",
   "version": "1.0.0",
-  "description": "api-testbench",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,16 +10,16 @@
     "type": "git",
     "url": "git+https://github.com/MalcolmAnderson/CodeEveryDay.git"
   },
-  "keywords": [
-    "api"
-  ],
-  "author": "Malcolm Anderson",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MalcolmAnderson/CodeEveryDay/issues"
   },
   "homepage": "https://github.com/MalcolmAnderson/CodeEveryDay#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
     "request": "^2.88.0"
   }
 }

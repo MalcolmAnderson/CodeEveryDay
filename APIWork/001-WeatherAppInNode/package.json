@@ -1,0 +1,26 @@
+{
+  "name": "apiwork",
+  "version": "1.0.0",
+  "description": "api-testbench",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MalcolmAnderson/CodeEveryDay.git"
+  },
+  "keywords": [
+    "api"
+  ],
+  "author": "Malcolm Anderson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MalcolmAnderson/CodeEveryDay/issues"
+  },
+  "homepage": "https://github.com/MalcolmAnderson/CodeEveryDay#readme",
+  "dependencies": {
+    "request": "^2.88.0",
+    "yargs": "^15.0.2"
+  }
+}
