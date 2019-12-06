@@ -1,4 +1,13 @@
 function seekAndDestroy(arr1: number[], arr2: number[]): number[] {
+    return arr1.filter(num => arr2.indexOf(num) === -1);
+}
+
+function seekAndDestroy_2(arr1: number[], arr2: number[]): number[] {
+    let output: number[] = arr1.filter(num => arr2.indexOf(num) === -1);
+    return output;
+}
+
+function seekAndDestroy_1(arr1: number[], arr2: number[]): number[] {
     let output: number[] = [];
     for (let i: number = 0; i < arr1.length; i++) {
         if (arr2.indexOf(arr1[i]) === -1) {
