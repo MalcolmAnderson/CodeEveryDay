@@ -1,4 +1,8 @@
 function reverseAString(str: string): string {
+    return str.split('').reverse().join('');
+}
+
+function reverseAString_mine(str: string): string {
     let output: string = "";
     for (let i: number = str.length - 1; i >= 0; i--) {
         output += str[i];
