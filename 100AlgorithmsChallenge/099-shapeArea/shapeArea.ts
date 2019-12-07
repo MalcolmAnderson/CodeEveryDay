@@ -1,4 +1,13 @@
+// Dylan's version
 function shapeArea(n: number): number {
+    let area = 1;
+    for (let i: number = 1; i < n; i++) {
+        area += 4 * i;
+    }
+    return area;
+}
+
+function shapeArea_mine(n: number): number {
     let baseline = n * 2 - 1;
     let currentLine: number = baseline - 2;
     let areaAboveBaseLine: number = 0;
