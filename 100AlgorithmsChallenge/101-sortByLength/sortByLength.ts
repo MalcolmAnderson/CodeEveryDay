@@ -1,4 +1,9 @@
+// Dylan's version
 function sortByLength(inputArray: string[]): string[] {
+    return inputArray.sort((str1, str2) => str1.length - str2.length);
+}
+
+function sortByLength_mine(inputArray: string[]): string[] {
     const arrayObject: object = {};
     let largestArraySize: number = 0;
     for (let i: number = 0; i < inputArray.length; i++) {
@@ -20,7 +25,6 @@ function sortByLength(inputArray: string[]): string[] {
         }
     }
     return outputArray;
-
 }
 
 console.log(sortByLength(["abc",
