@@ -6,7 +6,7 @@ function getDigitCount(a0: number): number {
     return count;
 }
 
-function squareOfDigits(a0: number): number {
+function squareOfDigits_first(a0: number): number {
     let digits: number = getDigitCount(a0);
     let total: number = 0;
     while (digits > 0) {
@@ -17,6 +17,21 @@ function squareOfDigits(a0: number): number {
     }
     return total;
 }
+
+function squareOfDigits(a0: number): number {
+    let digitString = a0.toString();
+    let total: number = 0;
+    for (let i: number = 0; i < digitString.length; i++) {
+        total += Math.pow(parseInt(digitString[i]), 2);
+    }
+    return total;
+}
+
+console.log(squareOfDigits(1));  // 1
+console.log(squareOfDigits(3));  // 9
+console.log(squareOfDigits(9));  // 81
+console.log(squareOfDigits(81)); // 65
+console.log(squareOfDigits(65)); // 61 = 36 + 25
 
 function squareDigitsSequence(a0: number): number {
     const sumBag: object = {};
@@ -35,12 +50,6 @@ console.log(squareDigitsSequence(103));
 
 console.log(Math.floor(851 / 100))
 console.log(Math.floor(851 / Math.pow(10, 2)))
-
-console.log(squareOfDigits(1));  // 1
-console.log(squareOfDigits(3));  // 9
-console.log(squareOfDigits(9));  // 81
-console.log(squareOfDigits(81)); // 65
-console.log(squareOfDigits(65)); // 61 = 36 + 25
 
 
 console.log(getDigitCount(811)); // 1
