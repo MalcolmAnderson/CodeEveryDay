@@ -13,5 +13,5 @@ function stolenLunch(note: string): string {
 
     return strAsArray.join('');
 }
-//                                                      "you'll never guess it: 2390"
+//                                                       "you'll never guess it: 2390"
 console.log(stolenLunch("you'll n4v4r 6u4ss 8t: cdja")); 
