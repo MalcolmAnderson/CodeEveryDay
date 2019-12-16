@@ -47,7 +47,7 @@ function stolenLunch_secondPass(note: string): string {
 }
 
 
-function stolenLunch(note: string): string {
+function stolenLunch_3rdPass(note: string): string {
     const outputArray: string[] = [];
     const char2num: object = {
         "a": 0, "b": 1, "c": 2, "d": 3, "e": 4, "f": 5, "g": 6,
@@ -65,6 +65,27 @@ function stolenLunch(note: string): string {
     }
     return outputArray.join('');
 }
+
+// Dylan's 
+function stolenLunch(note: string): string {
+    const chars = note.split('');
+    let translatedMessage: string = '';
+    const codeDictionary: object = {
+        "a": "0", "b": "1", "c": "2", "d": "3", "e": "4",
+        "f": "5", "g": "6", "h": "7", "i": "8", "j": "9",
+        "0": "a", "1": "b", "2": "c", "3": "d", "4": "e",
+        "5": "f", "6": "g", "7": "h", "8": "i", "9": "j"
+    };
+    for (let char of chars) {
+        if (codeDictionary.hasOwnProperty(char)) {
+            translatedMessage += codeDictionary[char];
+        } else {
+            translatedMessage += char;
+        }
+    }
+    return translatedMessage;
+}
+
 
 console.log('g'.charCodeAt(0) - 'a'.charCodeAt(0));
 
