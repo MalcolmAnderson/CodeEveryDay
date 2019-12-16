@@ -27,17 +27,27 @@ console.log(isNaN(' '));
 function stolenLunch(note: string): string {
     const strAsArray: string[] = note.split('');
     const outPutArray: string[] = [];
+    let afterColon: boolean = false;
     for (let i: number = 0; i < strAsArray.length; i++) {
-        if (isNaN(Number(strAsArray[i])) || strAsArray[i] === ' ') {
-            outPutArray.push(strAsArray[i]);
+        if (!afterColon || strAsArray[i] === ' ') {
+            if (isNaN(Number(strAsArray[i])) || strAsArray[i] === ' ') {
+                outPutArray.push(strAsArray[i]);
+            } else {
+                outPutArray.push(String.fromCharCode('a'.charCodeAt(0) + parseInt(strAsArray[i])));
+            }
+            if (strAsArray[i] === ':') { afterColon = true; }
         } else {
-            outPutArray.push(String.fromCharCode('a'.charCodeAt(0) + parseInt(strAsArray[i])));
+            console.log('a' + strAsArray[i] + 'a');
+            console.log(strAsArray[i].charCodeAt(0))
+            const difference: number = strAsArray[i].charCodeAt(0) - 'a'.charCodeAt(0);
+            outPutArray.push(difference.toString());
         }
     }
     return outPutArray.join('');
 }
+console.log('g'.charCodeAt(0) - 'a'.charCodeAt(0);
 
 console.log('c'.charCodeAt(0) - 'a'.charCodeAt(0));
 
-//                                                       "you'll never guess it: 2390"
+//                                                        "you'll never guess it: 2390"
 console.log(stolenLunch("you'll n4v4r 6u4ss 8t: cdja")); 
