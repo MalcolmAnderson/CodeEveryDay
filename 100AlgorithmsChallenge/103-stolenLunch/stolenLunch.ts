@@ -23,8 +23,8 @@ function stolenLunch_firstPass_ReadTheRequirements(note: string): string {
 
     return strAsArray.join('');
 }
-console.log(isNaN(' '));
-function stolenLunch(note: string): string {
+console.log(isNaN(Number(' ')));
+function stolenLunch_secondPass(note: string): string {
     const strAsArray: string[] = note.split('');
     const outPutArray: string[] = [];
     let afterColon: boolean = false;
@@ -45,9 +45,35 @@ function stolenLunch(note: string): string {
     }
     return outPutArray.join('');
 }
-console.log('g'.charCodeAt(0) - 'a'.charCodeAt(0);
+
+
+function stolenLunch(note: string): string {
+    const outputArray: string[] = [];
+    const char2num: object = {
+        "a": 0, "b": 1, "c": 2, "d": 3, "e": 4, "f": 5, "g": 6,
+        "h": 7, "i": 8, "j": 9
+    };
+    const strAsArray = note.split('');
+    for (let i: number = 0; i < strAsArray.length; i++) {
+        if (char2num.hasOwnProperty(strAsArray[i])) {
+            outputArray.push(char2num[strAsArray[i]]);
+        } else if (isNaN(parseInt((char2num[i])))) {
+            outputArray.push(strAsArray[i]);
+        } else {
+            outputArray.push((strAsArray[i].charCodeAt(0) - 'a'.charCodeAt(0)).toString());
+        }
+    }
+    return outputArray.join('');
+}
+
+console.log('g'.charCodeAt(0) - 'a'.charCodeAt(0));
 
 console.log('c'.charCodeAt(0) - 'a'.charCodeAt(0));
-
+console.log('0'.charCodeAt(0));
+console.log('9'.charCodeAt(0));
+console.log(!isNaN(Number('9')))
+console.log(!isNaN(parseInt('9')));
+console.log(stolenLunch("4"));
+// console.log(stolenLunch("1")); 
 //                                                        "you'll never guess it: 2390"
 console.log(stolenLunch("you'll n4v4r 6u4ss 8t: cdja")); 
