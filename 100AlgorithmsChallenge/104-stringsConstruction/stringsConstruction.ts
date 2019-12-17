@@ -1,4 +1,4 @@
-function stringsConstruction(a: string, b: string): number {
+function buildCountedLetterBagFromString(b: string): object {
     const bag: object = {};
     for (let i: number = 0; i < b.length; i++) {
         if (!bag.hasOwnProperty(b[i])) {
@@ -7,6 +7,10 @@ function stringsConstruction(a: string, b: string): number {
             bag[b[i]]++;
         }
     }
+    return bag;
+}
+
+function countStringsFromCountedLetterBag(bag: object, a: string): number {
     let continueLoop: Boolean = true;
     let count: number = 0;
     while (continueLoop) {
@@ -21,6 +25,12 @@ function stringsConstruction(a: string, b: string): number {
             count++;
         }
     }
+    return count;
+}
+
+function stringsConstruction(a: string, b: string): number {
+    const bag: object = buildCountedLetterBagFromString(b);
+    let count: number = countStringsFromCountedLetterBag(bag, a);
     return count;
 }
 
