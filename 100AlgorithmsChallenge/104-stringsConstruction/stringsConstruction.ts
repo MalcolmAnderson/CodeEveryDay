@@ -35,5 +35,6 @@ function stringsConstruction(a: string, b: string): number {
 }
 
 console.log(stringsConstruction('abc', 'abccba'));
+console.log(stringsConstruction('abbc', 'abccbabb'));
 console.log(stringsConstruction('ab', 'abbaab'));
 console.log(stringsConstruction('a', 'aaaaaaa'));
