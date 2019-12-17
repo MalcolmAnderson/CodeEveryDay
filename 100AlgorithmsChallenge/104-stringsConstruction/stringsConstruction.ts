@@ -49,11 +49,7 @@ function stringsConstruction_mine(a: string, b: string): number {
     let count: number = countStringsFromCountedLetterBag(bag, a);
     return count;
 }
-
-// dylan's approch is a bit different
-function stringsConstruction(a: string, b: string): number {
-    const aCount: object = getAlphabetCount(a);
-    const bCount: object = getAlphabetCount(b);
+function countNumberOfAsFromBViaCounts(aCount: object, bCount: object) {
     const counts: number[] = [];
     for (let char in aCount) {
         if (bCount.hasOwnProperty(char)) {
@@ -63,6 +59,15 @@ function stringsConstruction(a: string, b: string): number {
         }
     }
     let count: number = Math.min(...counts);
+    return count;
+}
+
+// dylan's approch is a bit different
+// this is my refactoring of dylan's approach
+function stringsConstruction(a: string, b: string): number {
+    const aCount: object = getAlphabetCount(a);
+    const bCount: object = getAlphabetCount(b);
+    let count: number = countNumberOfAsFromBViaCounts(aCount, bCount);
     return count;
 }
 
