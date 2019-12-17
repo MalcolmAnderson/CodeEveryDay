@@ -1,19 +1,3 @@
-
-// dylan's first function is effectively the same as mine
-function getAlphabetCount(word: string): object {
-    const chars = word.split('');
-    const alphabetCount: object = {};
-    chars.forEach((char) => {
-        if (alphabetCount.hasOwnProperty(char)) {
-            alphabetCount[char]++;
-        } else {
-            alphabetCount[char] = 1;
-        }
-    });
-    return alphabetCount;
-}
-
-
 function buildCountedLetterBagFromString(b: string): object {
     const bag: object = {};
     for (let i: number = 0; i < b.length; i++) {
@@ -49,6 +33,8 @@ function stringsConstruction_mine(a: string, b: string): number {
     let count: number = countStringsFromCountedLetterBag(bag, a);
     return count;
 }
+
+
 function countNumberOfAsFromBViaCounts(aCount: object, bCount: object) {
     const counts: number[] = [];
     for (let char in aCount) {
@@ -60,6 +46,20 @@ function countNumberOfAsFromBViaCounts(aCount: object, bCount: object) {
     }
     let count: number = Math.min(...counts);
     return count;
+}
+
+// dylan's first function is effectively the same as mine
+function getAlphabetCount(word: string): object {
+    const chars = word.split('');
+    const alphabetCount: object = {};
+    chars.forEach((char) => {
+        if (alphabetCount.hasOwnProperty(char)) {
+            alphabetCount[char]++;
+        } else {
+            alphabetCount[char] = 1;
+        }
+    });
+    return alphabetCount;
 }
 
 // dylan's approch is a bit different
