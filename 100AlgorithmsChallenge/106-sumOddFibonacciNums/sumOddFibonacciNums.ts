@@ -1,5 +1,5 @@
 function sumOddFibonacciNums(num: number): number {
-
+    return 10;
 }
 
 
